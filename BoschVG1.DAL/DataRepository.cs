@@ -1,9 +1,4 @@
 ﻿using BoschVG1.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BoschVG1.DAL
 {
@@ -23,7 +18,7 @@ namespace BoschVG1.DAL
             }
         }
 
-        public Task SaveData(List<ModelClass> vg)
+        public Task SaveData(List<VisonGate1> vg)
         {
             using (var db = GetDatabase())
             {
@@ -31,7 +26,7 @@ namespace BoschVG1.DAL
                 //const string sql = $"insert into vg1 values (@box_id, @part_nu, @quantity, @job_id, @status)";
                 //db.Execute(sql, new { vg.box_id, vg.part_nu, vg.quantity, vg.job_id, vg.status });
                 //db.CompleteTransaction();
-                db.InsertBulk<ModelClass>(vg);
+                db.InsertBulk<VisonGate1>(vg);
             }
             return Task.CompletedTask;
         }

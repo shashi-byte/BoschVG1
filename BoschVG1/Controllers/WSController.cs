@@ -59,13 +59,13 @@ namespace BoschVG1.Controllers
             for (int i = 0; i < 1000; i++)
             {
                 int? maxJobId = await _datarepository.GetJobIdDetails();
-                var coll = new ObservableCollection<ModelClass>();
+                var coll = new ObservableCollection<VisonGate1>();
                 if (maxJobId != null)
                 {
                     int JobId = maxJobId.Value + 1;
                     for (int j = 0; j < 4; j++)
                     {
-                        ModelClass obj1 = new ModelClass()
+                        VisonGate1 obj1 = new VisonGate1()
                         {
                             job_id = JobId,
                             box_id = randNum.Next(10000, 20000),
@@ -81,7 +81,7 @@ namespace BoschVG1.Controllers
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        ModelClass obj1 = new ModelClass()
+                        VisonGate1 obj1 = new VisonGate1()
                         {
                             job_id = jobId,
                             box_id = randNum.Next(10000, 20000),
@@ -128,10 +128,10 @@ namespace BoschVG1.Controllers
                 var randNum = new Random();
                 for (int i = 0; i < 1000; i++)
                 {
-                    var coll = new ObservableCollection<ModelClass>();
+                    var coll = new ObservableCollection<VisonGate1>();
                     for (int j = 0; j < 4; j++)
                     {
-                        ModelClass obj1 = new ModelClass()
+                        VisonGate1 obj1 = new VisonGate1()
                         {
                             job_id = i,
                             box_id = randNum.Next(10000, 20000),
@@ -188,7 +188,7 @@ namespace BoschVG1.Controllers
         }
 
         [HttpPost("/test3")]
-        public async Task Test3([FromBody] List<ModelClass> vg)
+        public async Task Test3([FromBody] List<VisonGate1> vg)
         {
             try
             {

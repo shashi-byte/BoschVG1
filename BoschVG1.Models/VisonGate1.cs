@@ -3,7 +3,7 @@
 namespace BoschVG1.Models
 {
     [TableName("vg1")]
-    public class ModelClass
+    public class VisonGate1
     {
         public int? job_id { get; set; }
         public int box_id { get; set; }
